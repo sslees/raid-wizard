@@ -1,5 +1,6 @@
 import { formatMoney, formatTb } from "../format.ts";
 import { BayVisualization } from "./BayVisualization.tsx";
+import { NumberField } from "./NumberField.tsx";
 
 interface HardwareZoneProps {
   bayCount: number;
@@ -38,36 +39,21 @@ export function HardwareZone({
       </header>
 
       <div className="hardware-zone__inputs">
-        <label className="field">
-          <span>Bays</span>
-          <input
-            type="number"
-            min={1}
-            max={24}
-            value={bayCount}
-            onChange={(e) => onBayCountChange(Number(e.target.value))}
-          />
-        </label>
-        <label className="field">
-          <span>Drives in use</span>
-          <input
-            type="number"
-            min={1}
-            max={bayCount}
-            value={drivesInUse}
-            onChange={(e) => onDrivesChange(Number(e.target.value))}
-          />
-        </label>
-        <label className="field">
-          <span>Size (TB each)</span>
-          <input
-            type="number"
-            min={1}
-            max={100}
-            value={sizePerDrive}
-            onChange={(e) => onSizeChange(Number(e.target.value))}
-          />
-        </label>
+        <NumberField label="Bays" value={bayCount} min={1} max={24} onCommit={onBayCountChange} />
+        <NumberField
+          label="Drives in use"
+          value={drivesInUse}
+          min={1}
+          max={bayCount}
+          onCommit={onDrivesChange}
+        />
+        <NumberField
+          label="Size (TB each)"
+          value={sizePerDrive}
+          min={1}
+          max={100}
+          onCommit={onSizeChange}
+        />
         <label className="field">
           <span>Price per drive</span>
           <input

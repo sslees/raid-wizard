@@ -23,7 +23,7 @@ npm test
 npm run build
 ```
 
-This writes the static site to `docs/` with `base: /raid/` for project-page hosting.
+This writes the static site to `docs/` with `base: /raid-wizard/` (matching the GitHub repository name) for project-page hosting.
 
 Preview the production build locally:
 
@@ -37,7 +37,7 @@ npm run preview
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment**, set Source to **Deploy from a branch**.
 4. Choose branch **`main`** and folder **`/docs`**.
-5. Save. The site will be available at `https://<username>.github.io/raid/`.
+5. Save. The site will be available at `https://<username>.github.io/raid-wizard/` (the path segment must match the repository name; if you rename the repo, update `base` in `vite.config.ts` to match).
 
 The build copies `public/.nojekyll` into `docs/` so Jekyll does not process the output.
 
