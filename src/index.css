@@ -160,7 +160,7 @@ button:focus-visible {
 
 .hardware-zone__inputs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
@@ -169,12 +169,15 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
+  min-width: 0;
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--color-text);
 }
 
 .field input {
+  width: 100%;
+  min-width: 0;
   padding: 0.55rem 0.7rem;
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-sm);
@@ -520,10 +523,6 @@ button:focus-visible {
 /* ---------- Responsive ---------- */
 
 @media (max-width: 768px) {
-  .hardware-zone__inputs {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .hardware-zone__derived {
     grid-template-columns: 1fr;
   }

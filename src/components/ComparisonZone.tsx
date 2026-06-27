@@ -25,7 +25,7 @@ export function ComparisonZone({
         <div>
           <h2>RAID comparison</h2>
           <p>
-            {drivesInUse}× {sizePerDrive} TB drives
+            {drivesInUse} × {sizePerDrive} TB drives
             {emptyBays > 0 ? ` · ${emptyBays} empty bays` : " · chassis full"}
           </p>
         </div>
